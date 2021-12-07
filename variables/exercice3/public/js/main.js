@@ -1,4 +1,4 @@
-var question = prompt("Coucou tu peux répondre?")
+let question = prompt("Coucou tu peux répondre?")
 
 let answer = question;
 
