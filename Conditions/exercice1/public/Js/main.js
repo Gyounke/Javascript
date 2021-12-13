@@ -85,7 +85,7 @@
 //  nombre = +prompt ("Rajoute un troisième nombre");
 
 //  if (nombre < 12) {
-//     petitNombre.push(nombre);
+//    petitNombre.push(nombre);
 // } else {
 //     grandNombre.push(nombre)
 // }
