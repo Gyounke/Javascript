@@ -57,7 +57,7 @@
 //    - Faire une boucle décendante pour les nombres pairs de 20 à 0
 //         // Ex: 20-18-16, ect.
 
-// for (i=20; i<2; i-2) {
+// for (let i=20; i>0; i-2) {
 //     console.log(i);   
 // }
 

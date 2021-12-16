@@ -34,6 +34,7 @@ let age = 28;*/
 
 // Boucles
 let tableau = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+
 // for 
 
 // for (let i = 0; i < tableau.length; i++) {
@@ -43,6 +44,62 @@ let tableau = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dim
 tableau.forEach(element =>{
     console.log(element);
 });
+
 //  while
 
+let prenom = prompt("Prénom");
+
+while (prenom != "Elias") {
+    alert("Mauvais prénom");
+    prenom = prompt("Prénom");
+}
+
 //  do while 
+
+
+// Functions 
+
+// Trouvable
+function saluer() {
+
+}
+
+// Plus rare
+const saluer = function(){
+
+}
+
+// Après 2015 
+
+const saluer = (prenom) => {
+    console.log(`Bonjour ${prenom}`)
+}
+
+saluer("Elias");
+saluer("Michael");
+
+// Return
+
+const saluer = (nbre1, nbre2) => {
+    let somme = nbre1 + nbre2;
+    return somme; // renvoye le résultat de la fonction
+}
+
+console.log(saluer(2,5))
+
+
+// Objects
+
+let personne = {
+    nom: "Blistein",
+    prenom: "Kevin",
+    age: 25,
+    origine: "Whonose"
+}
+
+let tableau = [personne]
+console.log(personne); //affiche toutes les valeurs de l'objet
+
+console.log(personne.prenom);
+
+console.log(tableau[0].prenom);
