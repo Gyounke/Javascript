@@ -32,74 +32,114 @@ let age = 28;*/
 // }
 
 
-// Boucles
-let tableau = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+// // Boucles
+// let tableau = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
 
-// for 
+// // for 
 
-// for (let i = 0; i < tableau.length; i++) {
-//     console.log(tableau[i]);
+// // for (let i = 0; i < tableau.length; i++) {
+// //     console.log(tableau[i]);
+// // }
+// //  for each
+// tableau.forEach(element =>{
+//     console.log(element);
+// });
+
+// //  while
+
+// let prenom = prompt("Prénom");
+
+// while (prenom != "Elias") {
+//     alert("Mauvais prénom");
+//     prenom = prompt("Prénom");
 // }
-//  for each
-tableau.forEach(element =>{
-    console.log(element);
-});
 
-//  while
+// //  do while 
 
-let prenom = prompt("Prénom");
 
-while (prenom != "Elias") {
-    alert("Mauvais prénom");
-    prenom = prompt("Prénom");
+// // Functions 
+
+// // Trouvable
+// function saluer() {
+
+// }
+
+// // Plus rare
+// const saluer = function(){
+
+// }
+
+// // Après 2015 
+
+// const saluer = (prenom) => {
+//     console.log(`Bonjour ${prenom}`)
+// }
+
+// saluer("Elias");
+// saluer("Michael");
+
+// // Return
+
+// const saluer = (nbre1, nbre2) => {
+//     let somme = nbre1 + nbre2;
+//     return somme; // renvoye le résultat de la fonction
+// }
+
+// console.log(saluer(2,5))
+
+
+// // Objects
+
+// let personne = {
+//     nom: "Blistein",
+//     prenom: "Kevin",
+//     age: 25,
+//     origine: "Whonose"
+// }
+
+// let tableau = [personne]
+// console.log(personne); //affiche toutes les valeurs de l'objet
+
+// console.log(personne.prenom);
+
+// console.log(tableau[0].prenom);
+
+
+// classe
+
+// exemple d'objet:
+
+// let personne1 = {
+//     nom: "Blistein",
+//     prenom : " Kevin",
+// }
+
+// let personne2 = {
+//     nom: "Bob",
+//     prenom : " Dylan",
+// }
+
+// let personne3 = {
+//     nom: "Sinclair",
+//     prenom : "Thunder",
+// }
+
+// console.log(personne,personne2,personne3);
+
+// Création d'une classe contenant les objets de l'exemple ci-dessus
+
+class Personne {
+    constructor(nom, prenom) {
+        this.nom = nom;
+        this.person = prenom;
+        this.saluer = () => {
+            console.log("Bonjour");
+        } 
+    }
 }
 
-//  do while 
+let personne1 = new Personne("Blistein", "Kevin");
+let personne2 = new Personne("Bob", "Dylan");
+let personne3 = new Personne("Sinclair", "Thunder");
 
-
-// Functions 
-
-// Trouvable
-function saluer() {
-
-}
-
-// Plus rare
-const saluer = function(){
-
-}
-
-// Après 2015 
-
-const saluer = (prenom) => {
-    console.log(`Bonjour ${prenom}`)
-}
-
-saluer("Elias");
-saluer("Michael");
-
-// Return
-
-const saluer = (nbre1, nbre2) => {
-    let somme = nbre1 + nbre2;
-    return somme; // renvoye le résultat de la fonction
-}
-
-console.log(saluer(2,5))
-
-
-// Objects
-
-let personne = {
-    nom: "Blistein",
-    prenom: "Kevin",
-    age: 25,
-    origine: "Whonose"
-}
-
-let tableau = [personne]
-console.log(personne); //affiche toutes les valeurs de l'objet
-
-console.log(personne.prenom);
-
-console.log(tableau[0].prenom);
+console.log(personne1,personne2,personne3);

@@ -175,3 +175,90 @@
 // }
 
 // logIn();
+
+// Révisions
+// # Functions
+
+
+// 1. Créez une fonction qui permet de returner la taille d'une chaine de caractères
+
+// let question = prompt("Tape ce que tu veux sauce au poivre");
+
+// let longueur = (phrase) => {
+//     let calcul = phrase.length;
+//     return calcul;
+// }
+
+// alert(longueur(question));
+
+// 2. Créez une fonction qui permet de verifier quel est le type du parametre
+
+// let paramverif = "5";
+
+// let verif = (param) => {
+//     let veritas = typeof(param);
+//     return veritas;
+// }
+
+// alert(verif(paramverif));
+
+// 3. Créez une fonction qui permet de vérifier si le chiffre est plus grand ou égale à 50
+
+// let choix = +prompt("Donnez un nombre viiite")
+
+// let check = (nombreCheck) => {
+//     if (nombreCheck < 50){
+//         let annonce1 = "Ce nombre est inférireur à 50";
+//         return annonce1;
+//     } else {
+//         let annonce2 = "Ce nombre est supérieur à 50";
+//         return annonce2;
+//     }
+// }
+
+// alert(check(choix));
+
+// 4. Créez une fonction qui permet de renvoyer la racine cubique du parametre
+
+// let choix = +prompt("Donnez un nombre dont vous voulez la racine cubique brdl");
+
+// let cubaaaar = (nombre) => {
+//     let veritas = Math.cbrt(nombre);
+//     return veritas;
+// }
+
+// alert(`La valeur de la racine cubique du nompbre choisi vaut ${cubaaaar(choix)}`);
+
+// 5. Créez une fonction qui met en majuscule qu'à partir de la 5ème lettre
+
+// let phrase = prompt("Donne la phrase que tu veux sale type");
+
+// let major = (mots) => {
+//     let newPhrase = mots.substring(0,4) + mots.substring(4).toUpperCase();
+//     return newPhrase;
+// }
+
+// alert(major(phrase));
+
+// 6. Créez une fonction qui met en miniscule qu'à partir de la 9ème lettre
+
+// let phrase = prompt("Donne la phrase que tu veux sale type");
+
+// let minor = (mots) => {
+//     let newPhrase2 = mots.substring(0,8) + mots.substring(8).toLowerCase();
+//     return newPhrase2;
+// }
+
+// alert(minor(phrase));
+
+
+// 7. Fusionnez les deux fonctions
+
+// let phrase = prompt("Donne la phrase que tu veux sale type");
+
+// let fuckedUp = (mots) => {
+//     let newPhrase3 = mots.substring(0,4) + mots.substring(4,8).toUpperCase() + mots.substring(8).toLowerCase();
+//     return newPhrase3;
+// }
+
+// alert(fuckedUp(phrase));

@@ -216,3 +216,25 @@
 //     console.log(`${noms[i]} a eu ${chiffres[i]} en Math`);
 // }
 //      // console.log(`${lepremiereprenom} a eu ${lepremierchiffre}/20 en Math`
+
+
+// Boucles
+// 1. let question = prompt("Trois nains vont a la mine, l'un prend une pioche, le deuxième prend une pelle, que prend le troisième?" +"(Réponse : le nain ______") + "ATTENTION, tant que tu ne répond pas a la question, la question réaparait";
+
+
+// 2. Créez un tableau avec les élèves de la classe, et faites les passer dans un autre tableau
+
+// let classe = ["Aleks","Amanda","Elias","Eliot","Gursel","Imane","Jade","Kevin","Louis","Marcyl","Mich","Samy","Ilias","Adil","Isma","Nicola","Batou","Calvin","Momo"];
+// let transfert = [];
+
+// classe.forEach (element => {
+// transfert.push(element);
+// });
+
+// alert(transfert);
+
+// 3. Créez un tableau avec des fruits, et tant que la personne veut supprimer un fruit, vous lui demandez lequel et il se supprime
+
+
+
+// 4. Faites la même chose que l'exercice 2 avec une boucle foreach
