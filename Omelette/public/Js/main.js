@@ -91,15 +91,13 @@ carrefourExpress.paniers.push(panier3);
 class Outils {
     constructor(nom) {
         this.nom = nom;
-        decoupage = (objet) => {
+        this.decoupage = (objet) => {
             objet.etat = "Découpés"
-        }
-        cassage = (objet) => {
-            objet.etat = "cassés"
         }
     }
 }
 
+let couteau = new Outils ("Alonzo");
 
 /**
  * Créer des produits (ingrédients) à mettre dans le magasin qui serviront à créer l'omelette (oignon, oeuf, epice, fromage, ...);
@@ -156,13 +154,21 @@ class Poele extends Outils {
 // ajouter une méthode melanger(nomMelange) qui va créer un nouvel objet "newMelange" avec comme nom la variable nomMelange passé en paramètre et avec 'pas cuit' en etat. cette méthode remplacera this.contenu par [l'obj newMelange]
 
 class Bol extends Outils {
-    constructor(nom){
+    constructor(nom, contenu){
         super(nom);
-        melanger = (nomMelange) => {
-            newMelange =[nomMelange, "pas cuit"];
+        this.contenu = contenu;
+        this.ajouter = (objet) => {
+            this.contenu.push(objet);
+            panier1.contenu.splice(panier1.contenu.indexOf(objet), 1);
+            // newMelange =[nomMelange, "pas cuit"];
+        }
+        this.melanger = () => {
+            
         }
     }
 }
+
+let bolinette = new Bol("C'est un petit bol", []);
 
 /**** DEBUT DE L'OMELETTE ****/
 
@@ -194,37 +200,85 @@ console.log(carrefourExpress.paniers);
 
 
 // Je créer une boucle qui va prendre chaque élément (ingrédient) du contenu de l'épicerie (1 à 1) et en faire une COPIE dans le panier du personnage
+// Afficher un message à chaque ingrédient pris
 
-rayonFrais.forEach(element => 
-   panier1.contenu.push(element));
+rayonFrais.forEach(function (element) {
+   panier1.contenu.push(element);
+   console.log(`${element.nom} a été ajouté au panier`);
+}, );
 
 console.log(panier1.contenu);
 
-// Afficher un message à chaque ingrédient pris
 
 // Payer chaque ingrédient récupéré dans le panier. Avec une boucle aussi, on va les passer 1 à 1 dans la fonction payerArticle()
 
+panier1.contenu.forEach(function (element) {
+    bgDu1030.argent -= element.prix
+    console.log(`${element.nom} a été payé`);
+ }, );
+
 // Afficher un message de ce qu'il reste d'argent sur le personnage.
+
+console.log(`Il reste ${bgDu1030.argent} Euros à ${bgDu1030.nom}.`);
 
 // rentrer à la maison (comme ça on pourra cuisiner)
 
-// mettre chaque ingrédient dans le bol (1 à 1 donc avec une boucle)
+bgDu1030.seDeplacer(maison.nom);
 
-// Vérifier que les ingrédients ne se trouvent plus dans le panier (oups ! on a oublié de le rapporter x)
+console.log(`${bgDu1030.nom} est arrivé à la ${bgDu1030.lieu}`)
+
+// mettre chaque ingrédient dans le bol (1 à 1 donc avec une boucle)
 
 // Afficher un petit message de chaque ingrédient qu'on met dans le bol.
 
-// Retourner à l'épicerie pour rapporter le panier. (donc seDeplacer puis enlever le panier de la main droite et le remetre dans les paniers de l'épicerie.)
+ for (i = 0; i < panier1.contenu.length; i++) {
+    console.log(`${panier1.contenu[i].nom} a été ajouté à une bolinette ${bolinette.nom}`);
+    bolinette.ajouter(panier1.contenu[i]);
+    i = i-1;
+ }
 
+
+// Vérifier que les ingrédients ne se trouvent plus dans le panier (oups ! on a oublié de le rapporter x))
+
+console.log(panier1.contenu);
+
+
+// Retourner à l'épicerie pour rapporter le panier. (donc seDeplacer puis enlever le panier de la main droite et le remetre dans les paniers de l'épicerie.)
 // Afficher un petit message
+
+bgDu1030.seDeplacer(carrefourExpress.nom);
+carrefourExpress.paniers.push(panier1);
+bgDu1030.mainDroite.splice(0,1);
+console.log(`${bgDu1030.nom} tient dans sa main droite :`);
+console.log (bgDu1030.mainDroite);
+console.log(carrefourExpress.paniers);
+
 
 // Retourner à la maison pour continuer l'omelette
 
+bgDu1030.seDeplacer(maison.nom);
+
 // Afficher un petit message
+
+console.log(`${bgDu1030.nom} est actuellement à la ${bgDu1030.lieu}`);
 
 // Vérifier chaque ingrédient dans le bol et le couper seulement s'il est entier ! Pour ça on utilise la méthode couper de personnage
 
+console.log(bolinette.contenu);
+
+for (i = 0; i < bolinette.contenu.length; i++ ) {
+    if (bolinette.contenu[i].etat == "entier") {
+        couteau.decoupage(bolinette.contenu[i]);
+        console.log(`${bolinette.contenu[i].nom} a été découpé`);
+    } else {
+        console.log(`Cet aliment est conforme aux règles prescrites par la traditionnelle recette de l'omelette.`);
+    }
+}
+
+
 // Mélanger le contenu du bol avec la méthode melanger. on va nommer ce mélange une 'omelette' (à passer en param).
+
+bolinette.melanger();
 
 // Afficher un message avec le nouveau mélange
 
