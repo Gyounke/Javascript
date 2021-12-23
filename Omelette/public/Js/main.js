@@ -1,3 +1,6 @@
+
+import {maison, bgDu1030, carrefourExpress, panier1, panier2, panier3, couteau, rayonFrais, oignons, oeufs, sel, poivre, fromage, marcelle, omelette, bolinette} from "./_variables.js" ;
+
 /** Créer un objet/classe personne. Cette personne doit avoir des propriétés et des méthodes : 
 * - nom(string)
 * - lieu(string)
@@ -9,32 +12,8 @@
 * - couper(ingredient, outil)
 */
 
-class Personne {
-    constructor(nom, lieu, argent, mainDroite, mainGauche,) {
-        this.nom = nom;
-        this.lieu = lieu;
-        this.argent = argent;
-        this.mainDroite = mainDroite;
-        this.mainGauche = mainGauche;
-        this.seDeplacer = (arrivee) => {
-            this.lieu = arrivee
-        }
-        this.payerArticle = (objet) => {
-            this.argent = this.argent - objet.prix;
-        }
-        this.prendre = (objet,main) => {
-            if (main == "main droite") {
-                this.mainDroite.push(objet);
-                carrefourExpress.paniers.splice(carrefourExpress.paniers.indexOf(objet), 1);
-            } else if (main == "main gauche") {
-                this.mainGauche.push(objet);
-                rayonFrais.splice(carrefourExpress.paniers.indexOf(objet), 1);
-            }
-        }
-    }
-}
 
-let bgDu1030 = new Personne("Leukah", "Maison", 120, [], []);
+
 
 /**
 * Créer un lieu "maison" (un objet) avec comme propriété "nom: 'maison'" et "personnes = []" => qui sera un tableau de personnes présentes dans la maison :
@@ -42,43 +21,13 @@ let bgDu1030 = new Personne("Leukah", "Maison", 120, [], []);
 // nom, personnes = [], paniers (un tableau d'objets "panier" avec une propriété "type" égal à panier et le contenu du panier, égal à un tableau vide),
 */
 
-class Lieux {
-    constructor(nom, personnes) {
-        this.nom = nom;
-        this.personnes = personnes;
-    }
-}
-
-class Epicerie extends Lieux {
-    constructor(nom, personnes) {
-        super(nom, personnes);
-        this.paniers = []
-    }
-}
 
 
 
-let maison = new Lieux("Maison", []);
-let carrefourExpress = new Epicerie("Carrefour Express", []);
-
-let panier1 = {
-    nom: "Panier 1",
-    contenu : [],
-}
 
 carrefourExpress.paniers.push(panier1);
 
-let panier2 = {
-    nom: "Panier 2",
-    contenu : [],
-}
-
 carrefourExpress.paniers.push(panier2);
-
-let panier3 = {
-    nom: "Panier 3",
-    contenu : [],
-}
 
 carrefourExpress.paniers.push(panier3);
 
@@ -88,48 +37,27 @@ carrefourExpress.paniers.push(panier3);
 * action a comme valeur l'état "coupé" (qui sera mis aux légumes lorsqu'ils seront coupés avec le méthode de "personne".)
 */
 
-class Outils {
-    constructor(nom) {
-        this.nom = nom;
-        this.decoupage = (objet) => {
-            objet.etat = "Découpés"
-        }
-    }
-}
 
-let couteau = new Outils ("Alonzo");
+
+
 
 /**
  * Créer des produits (ingrédients) à mettre dans le magasin qui serviront à créer l'omelette (oignon, oeuf, epice, fromage, ...);
  * propriétés : nom, etats ( entier,coupé, moulu), prix
  */
 
-let rayonFrais = [];
 
-class Produits {
-    constructor(nom, etat, prix) {
-        this.nom = nom;
-        this.etat = etat;
-        this.prix = prix;
-        this.miseEnRayon = (objet) => {
-            rayonFrais.push(objet);
-        }
-    }
-}
 
-let oignons = new Produits("oignons", "entier", 2);
-let oeufs = new Produits("oeufs", "entier", 1);
-let sel = new Produits("sel", "moulu", 0.5);
-let poivre = new Produits("poivre", "moulu", 0.5);
-let fromage = new Produits("fromage", "entier", 3.5);
+
+
 
 // Les "ingrédients" créés juste au dessus contenus dans un tableau.
 
-oignons.miseEnRayon(oignons);
-oeufs.miseEnRayon(oeufs);
-sel.miseEnRayon(sel);
-poivre.miseEnRayon(poivre);
-fromage.miseEnRayon(fromage);
+oignons.miseEnRayon(rayonFrais,oignons);
+oeufs.miseEnRayon(rayonFrais,oeufs);
+sel.miseEnRayon(rayonFrais,sel);
+poivre.miseEnRayon(rayonFrais,poivre);
+fromage.miseEnRayon(rayonFrais,fromage);
 
 // console.log(rayonFrais);
 
@@ -137,48 +65,12 @@ fromage.miseEnRayon(fromage);
  * Créer un poele avec un tableau comme contenu. Et avec une méthode cuir() qui, après 4 secondes, met l'état 'cuit' à this.contenu[0]. On peut faire ça avec la fonction setTimeout(()=> {}, 4000)
  */
 
-class Poele extends Outils {
-    constructor(nom, contenu) {
-        super(nom);
-        this.contenu = contenu;
-        this.cuisson = (objet) => {
-                objet.etat = "cuite"
-            }
-    }
-}
-
-let marcelle = new Poele("Marcelle", []);
 
 
 // Créer un bol avec un tableau comme contenu
 // ajouter une méthode melanger(nomMelange) qui va créer un nouvel objet "newMelange" avec comme nom la variable nomMelange passé en paramètre et avec 'pas cuit' en etat. cette méthode remplacera this.contenu par [l'obj newMelange]
 
-let omelette = {
-    nom :"omelette",
-    etat : "crue",
-}
 
-class Bol extends Outils {
-    constructor(nom, contenu){
-        super(nom);
-        this.contenu = contenu;
-        this.ajouter = (objet) => {
-            this.contenu.push(objet);
-            panier1.contenu.splice(panier1.contenu.indexOf(objet), 1);
-            // newMelange =[nomMelange, "pas cuit"];
-        }
-        this.melanger = () => {
-            this.contenu = [omelette];            
-        }
-    }
-}
-
-let bolinette = new Bol("C'est un petit bol", []);
-
-// let panier1 = {
-//     nom: "Panier 1",
-//     contenu : [],
-// }
 
 
 /**** DEBUT DE L'OMELETTE ****/
@@ -242,7 +134,7 @@ console.log(`${bgDu1030.nom} est arrivé à la ${bgDu1030.lieu}`)
 
 // Afficher un petit message de chaque ingrédient qu'on met dans le bol.
 
- for (i = 0; i < panier1.contenu.length; i++) {
+ for (let i = 0; i < panier1.contenu.length; i++) {
     console.log(`${panier1.contenu[i].nom} a été ajouté à une bolinette ${bolinette.nom}`);
     bolinette.ajouter(panier1.contenu[i]);
     i = i-1;
@@ -277,7 +169,7 @@ console.log(`${bgDu1030.nom} est actuellement à la ${bgDu1030.lieu}`);
 
 console.log(bolinette.contenu);
 
-for (i = 0; i < bolinette.contenu.length; i++ ) {
+for (let i = 0; i < bolinette.contenu.length; i++ ) {
     if (bolinette.contenu[i].etat == "entier") {
         couteau.decoupage(bolinette.contenu[i]);
         console.log(`${bolinette.contenu[i].nom} a été découpé`);
