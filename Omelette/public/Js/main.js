@@ -138,20 +138,25 @@ fromage.miseEnRayon(fromage);
  */
 
 class Poele extends Outils {
-    constructor(nom) {
+    constructor(nom, contenu) {
         super(nom);
-        setTimeout(() => {
-            cuisson = (objet) => {
-                objet.etat = "cuits"
+        this.contenu = contenu;
+        this.cuisson = (objet) => {
+                objet.etat = "cuite"
             }
-        }, 4000)
     }
 }
 
+let marcelle = new Poele("Marcelle", []);
 
 
 // Créer un bol avec un tableau comme contenu
 // ajouter une méthode melanger(nomMelange) qui va créer un nouvel objet "newMelange" avec comme nom la variable nomMelange passé en paramètre et avec 'pas cuit' en etat. cette méthode remplacera this.contenu par [l'obj newMelange]
+
+let omelette = {
+    nom :"omelette",
+    etat : "crue",
+}
 
 class Bol extends Outils {
     constructor(nom, contenu){
@@ -163,12 +168,18 @@ class Bol extends Outils {
             // newMelange =[nomMelange, "pas cuit"];
         }
         this.melanger = () => {
-            
+            this.contenu = [omelette];            
         }
     }
 }
 
 let bolinette = new Bol("C'est un petit bol", []);
+
+// let panier1 = {
+//     nom: "Panier 1",
+//     contenu : [],
+// }
+
 
 /**** DEBUT DE L'OMELETTE ****/
 
@@ -281,9 +292,25 @@ for (i = 0; i < bolinette.contenu.length; i++ ) {
 bolinette.melanger();
 
 // Afficher un message avec le nouveau mélange
+console.log("La bolinette contient :");
+console.log(bolinette.contenu);
 
 // vider le contenu du bol dans la poele. Il ne doit plus rien avoir dans le bol et y avoir juste l'omelette pas cuite.
 
+// marcelle.contenu.push(bolinette.contenu[0]);
+// bolinette.contenu.splice(0,1);
+
+marcelle.contenu = bolinette.contenu.splice(0,1);
+console.log(marcelle.contenu);
+console.log(bolinette.contenu);
+
 // Cuire l'omelette avec la méthode de la poele
 
+
+setTimeout(() => {marcelle.cuisson(omelette);
+    console.log(marcelle.contenu); }, 4000);
+
 // Afficher un message final, notre omelette est cuite :)
+
+console.log(`J'ai le privilège et l'honneur de vous annonce que malgré les épreuves, les doutes et même la rage, notre omelette est finalement cuite. j'espère qu'elle sera bonne :$`)
+
