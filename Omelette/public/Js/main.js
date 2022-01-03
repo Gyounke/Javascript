@@ -1,54 +1,12 @@
 
 import {maison, bgDu1030, carrefourExpress, panier1, panier2, panier3, couteau, rayonFrais, oignons, oeufs, sel, poivre, fromage, marcelle, omelette, bolinette} from "./_variables.js" ;
 
-/** Créer un objet/classe personne. Cette personne doit avoir des propriétés et des méthodes : 
-* - nom(string)
-* - lieu(string)
-* - argent(number)
-* - mainDroite(tableau)
-* ( du coup main gauche(tableau))
-* - seDeplacer(lieu)
-* - payerArticle(article) 
-* - couper(ingredient, outil)
-*/
-
-
-
-
-/**
-* Créer un lieu "maison" (un objet) avec comme propriété "nom: 'maison'" et "personnes = []" => qui sera un tableau de personnes présentes dans la maison :
-// Créer un lieu "epicerie" qui a comme propriétés :
-// nom, personnes = [], paniers (un tableau d'objets "panier" avec une propriété "type" égal à panier et le contenu du panier, égal à un tableau vide),
-*/
-
-
-
-
 
 carrefourExpress.paniers.push(panier1);
 
 carrefourExpress.paniers.push(panier2);
 
 carrefourExpress.paniers.push(panier3);
-
-/**
-* Créer un outil(classe avec couteau comme instance) (couteau) pour découper les ingrédients achetés
-* propriétés : nom et action.
-* action a comme valeur l'état "coupé" (qui sera mis aux légumes lorsqu'ils seront coupés avec le méthode de "personne".)
-*/
-
-
-
-
-
-/**
- * Créer des produits (ingrédients) à mettre dans le magasin qui serviront à créer l'omelette (oignon, oeuf, epice, fromage, ...);
- * propriétés : nom, etats ( entier,coupé, moulu), prix
- */
-
-
-
-
 
 
 // Les "ingrédients" créés juste au dessus contenus dans un tableau.
@@ -58,18 +16,6 @@ oeufs.miseEnRayon(rayonFrais,oeufs);
 sel.miseEnRayon(rayonFrais,sel);
 poivre.miseEnRayon(rayonFrais,poivre);
 fromage.miseEnRayon(rayonFrais,fromage);
-
-// console.log(rayonFrais);
-
-/**
- * Créer un poele avec un tableau comme contenu. Et avec une méthode cuir() qui, après 4 secondes, met l'état 'cuit' à this.contenu[0]. On peut faire ça avec la fonction setTimeout(()=> {}, 4000)
- */
-
-
-
-// Créer un bol avec un tableau comme contenu
-// ajouter une méthode melanger(nomMelange) qui va créer un nouvel objet "newMelange" avec comme nom la variable nomMelange passé en paramètre et avec 'pas cuit' en etat. cette méthode remplacera this.contenu par [l'obj newMelange]
-
 
 
 
@@ -189,20 +135,17 @@ console.log(bolinette.contenu);
 
 // vider le contenu du bol dans la poele. Il ne doit plus rien avoir dans le bol et y avoir juste l'omelette pas cuite.
 
-// marcelle.contenu.push(bolinette.contenu[0]);
-// bolinette.contenu.splice(0,1);
 
 marcelle.contenu = bolinette.contenu.splice(0,1);
-console.log(marcelle.contenu);
-console.log(bolinette.contenu);
 
 // Cuire l'omelette avec la méthode de la poele
-
-
-setTimeout(() => {marcelle.cuisson(omelette);
-    console.log(marcelle.contenu); }, 4000);
-
 // Afficher un message final, notre omelette est cuite :)
 
-console.log(`J'ai le privilège et l'honneur de vous annonce que malgré les épreuves, les doutes et même la rage, notre omelette est finalement cuite. j'espère qu'elle sera bonne :$`)
+setTimeout(() => {marcelle.cuisson(omelette);
+    console.log(`J'ai le privilège et l'honneur de vous annoncer que malgré les épreuves, les doutes et même la rage, notre omelette est finalement cuite. j'espère qu'elle sera bonne :$`)
+    console.log(marcelle.contenu); }, 4000);
+
+
+
+
 
