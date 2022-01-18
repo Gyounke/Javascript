@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="titre bg-primary">
+        <h1>Javascript DOM</h1>
+    </div>
+    <div class="onglet">
+        <div class="row">
+            <div class="col-2">
+                <h2>Exercice 1</h2>
+            </div>
+            <div class="col-2">
+                <h2>Exercice 2</h2>
+            </div>
+            <div class="col-2">
+                <h2>Exercice 3</h2>
+            </div>
+            <div class="col-2">
+                <h2>Exercice 4</h2>
+            </div>
+            <div class="col-2">
+                <h2>Exercice 5</h2>
+            </div>
+            <div class="col-2">
+                <h2>Exercice 6</h2>
+            </div>
+        </div>
+    </div>
+    <div class="exercice exercice1">
+        <div class="contenu1">
+
+            <h3>le titre originel</h3>
+            <p>liste de propriétés et méthodes à retrouver dans la documentation:</p>
+            <ul>
+                <li>innerText</li>
+                <li>innerHTML</li>
+                <li>querySelector()</li>
+                <li>querySelectorAll()</li>
+                <li>style</li>
+                <li>classList</li>
+            </ul>
+            <p>Changer le contenu du h2 par le "titre modifié"</p>
+            <p>changer la couleur du h2 (la couleur que vous voulez)</p>
+            <p>Ajouter une class background bootstrap au h2</p>
+        </div>
+    </div>
+    <div class="exercice exercice2 bg-secondary m-5 p-5">
+        <div class="contenu2">
+            <p>Mettre un écouteur d'évènement sur les boutons nav et changer le panel en conséquence</p>
+        </div>
+    </div>
+    <div class="exercice exercice3">
+        <div class="contenu3">
+            <h3>Welcome <span>inconnu</span> </h3>
+            <p>Ecrivez dans l'input ci-dessous le nom de la personne que vous voulez accueillir</p>
+            <p>Lorsque vous cliquez sur le bouton "go" le nom que vous avez ajouté dans l'input sera alors mis dans le
+                span
+                du h2 et l'input sera alors vidé de tout son contenu. Attetion, interdiction de toucher à l'HTML.</p>
+            <input type="" name="" value="">
+            <button type="">GO</button>
+        </div>
+    </div>
+    <div class="exercice exercice4">
+        <div class="contenu4">
+            <h3>Déplacer les éléments :</h3>
+            <div class="row">
+                <div class="terrain1 bg-primary col-6">
+                    <div class="square1"></div>
+                </div>
+                <div class="terrain2 bg-primary col-6">
+                    <div class="square2"></div>
+                </div>
+            </div>
+            <div class="text">
+                <button>Changer de place</button>
+                <p>Nombre de clicks: <span></span> </p>
+            </div>
+        </div>
+    </div>
+    <div class="exercice exercice5">
+        <div class="contenu5">
+            <h3>Générer des éléments du DOM</h3>
+            <p>Cliquez sur le bouton ci-dessous pour générer des oeufs.</p>
+            <button type="">ajouter un oeuf</button>
+            <div class="panier">
+
+            </div>
+        </div>
+    </div>
+    <div class=" exercice exercice6">
+        <div class="contenu6">
+            <h3>Création calculatrice</h3>
+            <h4>Niveau 1</h4>
+            <div class="row">
+                <input type="" name="" value="" class="addition1">
+                <p>+</p>
+                <input type="" name="" value="" class="addition2">
+                <button type="" class="egalite">=</button>
+                <p class="answer"></p>
+            </div>
+            <h4>Niveau 2</h4>
+            <div class="calculette">
+                <input type="" name="" value="" class="affichage">
+                <div class="row">
+                    <button class="touche">1</button>
+                    <button class="touche">2</button>
+                    <button class="touche">3</button>
+                    <button class="touche">+</button>
+                </div>
+                <div class="row">
+                    <button class="touche">4</button>
+                    <button class="touche">5</button>
+                    <button class="touche">6</button>
+                    <button class="touche">-</button>
+                </div>
+                <div class="row">
+                    <button class="touche">7</button>
+                    <button class="touche">8</button>
+                    <button class="touche">9</button>
+                    <button class="touche">*</button>
+                </div>
+                <div class="row">
+                    <button class="touche">C</button>
+                    <button class="touche">0</button>
+                    <button class="touche">=</button>
+                    <button class="touche">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./public/js/main.js" type="module"></script>
+</body>
+
+</html>
