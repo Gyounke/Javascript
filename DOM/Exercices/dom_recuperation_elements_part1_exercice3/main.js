@@ -1,8 +1,15 @@
+
+// 1.
+
 let lastDiv = document.getElementsByTagName("div")[2];
 console.log(lastDiv.firstElementChild);
 
-let firstDiv = document.getElementsByTagName("div")[0];
+// 2.
+
+let firstDiv = document.getElementsByTagName("div")[2];
 console.log(firstDiv.lastElementChild);
+
+// 3.
 
 let exo3 = document.getElementsByTagName("div")[2];
 let exo31 = exo3.getElementsByTagName("p")[0];
