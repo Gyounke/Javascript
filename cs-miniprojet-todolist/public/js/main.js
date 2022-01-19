@@ -7,10 +7,12 @@ let tasks = document.querySelector(".tasks")
 
 let ajout = () => {
     var newTask = document.createElement("div");
+    newTask.className = "tache";
     newTask.style.display = "flex";
     newTask.style.justifyContent = "space-around"
     var newCheck = document.createElement("input");
     newCheck.type = "checkbox"
+    newCheck.className = "checkbox";
     console.log(newCheck)
     var newP = document.createElement("p");
     var newTrashIcon = document.createElement("i");
@@ -50,18 +52,70 @@ let ajout = () => {
         okButton.innerText = "OK"
         let newInput = document.createElement("input");
         newTask.prepend(newInput);
-        
+
         okButton.addEventListener("click", () => {
-           newP.innerText = newInput.value;
-           newInput.remove()
-           okButton.remove()
+            newP.innerText = newInput.value;
+            newInput.remove()
+            okButton.remove()
         })
-
-
     }
 
     newEditIcon.addEventListener("click", edit);
 
+    // Supprimer toute la liste
+
+    let clearAll = document.querySelector(".clear");
+
+    let allTasks = [...document.querySelectorAll(".tache")];
+
+    clearAll.addEventListener("click", () => {
+
+
+        for (let i = 0; i < allTasks.length; i++) {
+            allTasks[i].remove();
+        }
+    })
+
+    // Trier en fonction du statut
+    let checkboxes = [...document.querySelectorAll(".checkbox")];
+
+
+    checkboxes.forEach(element => {
+        element.addEventListener("click", () => {
+            console.log(element);
+        })
+        
+    })
+
+    let done = document.querySelector(".done");
+    let toDo = document.querySelector(".toDo");
+    let all = document.querySelector(".all");
+
+    done.addEventListener("click", () => {
+        for (let j = 0; j < allTasks.length; j++){
+        if (checkboxes[j].checked == false) {
+            allTasks[j].style.display = "none"
+        } else if (checkboxes[j].checked == true) {
+            allTasks[j].style.display = "flex"
+        }
+    }
+    })
+
+    toDo.addEventListener("click", () => {
+        for (let k = 0; k < allTasks.length; k++) {
+            if (checkboxes[k].checked == true) {
+                allTasks[k].style.display = "none"
+            } else if (checkboxes[k].checked == false) {
+                allTasks[k].style.display = "flex"
+            }
+        }
+    })
+
+    all.addEventListener("click", () => {
+        for ( let l = 0; l < allTasks.length; l++) {
+            allTasks[l].style.display = "flex";
+        }
+    })
 
 }
 
