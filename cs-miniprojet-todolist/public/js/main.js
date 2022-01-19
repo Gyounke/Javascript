@@ -43,13 +43,24 @@ let ajout = () => {
 
     let editIcon = [...document.querySelectorAll(".fas fa-edit")]
     console.log(editIcon);
+
     let edit = () => {
+        let okButton = document.createElement("button");
+        newTask.prepend(okButton);
+        okButton.innerText = "OK"
         let newInput = document.createElement("input");
-        newTask.prependChild(newInput);
+        newTask.prepend(newInput);
+        
+        okButton.addEventListener("click", () => {
+           newP.innerText = newInput.value;
+           newInput.remove()
+           okButton.remove()
+        })
+
 
     }
 
-    newEditIcon.addEventListener("dblclick", edit);
+    newEditIcon.addEventListener("click", edit);
 
 
 }
