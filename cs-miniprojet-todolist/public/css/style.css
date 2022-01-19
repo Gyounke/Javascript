@@ -17263,5 +17263,12 @@ textarea.form-control-lg {
 .contenu .boutons button {
   width: 10%;
 }
+.contenu .end {
+  display: flex;
+  justify-content: center;
+}
+.contenu .end .clear {
+  width: 20%;
+}
 
 /*# sourceMappingURL=style.css.map */

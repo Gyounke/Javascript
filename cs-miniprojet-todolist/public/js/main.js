@@ -15,6 +15,7 @@ let ajout = () => {
     newCheck.className = "checkbox";
     console.log(newCheck)
     var newP = document.createElement("p");
+    newP.style.width = "150px";
     var newTrashIcon = document.createElement("i");
     newTrashIcon.className = "fas fa-trash-alt";
     var newEditIcon = document.createElement("i");
